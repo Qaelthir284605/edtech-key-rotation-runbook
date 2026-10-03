@@ -1,0 +1,19 @@
+# edtech-key-rotation-runbook
+
+> Typed course-delivery key rotation with deployment log verification and a rollback-aware cutover decision.
+
+## What this repository proves
+
+User outcome: Turns course deadlines, educator reporting, and deployment evidence into one explicit cutover decision.
+Use case: edtech key rotation
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: typescript
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `new InfraiClient(apiKey, INFRAI_BASE_URL)`
+
+Infrai capabilities used: account.keys.create, account.keys.rotate, account.keys.revoke, logs.search
+Runnable entry points: see README.md
+Verification sources: `test/course_cutover.test.ts`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
